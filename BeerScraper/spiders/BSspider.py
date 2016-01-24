@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from scrapy.spider      import BaseSpider
+from scrapy.spiders     import Spider
 from scrapy.selector    import Selector
 from BeerScraper        import items
 from scrapy.http        import Request
@@ -13,7 +13,7 @@ def url_concate(url, path):
     url_data = urlparse(url)
     return "%s://%s%s" % (url_data.scheme, url_data.netloc, path)
 
-class LCBOSpider(BaseSpider):
+class LCBOSpider(Spider):
     name = "lcbo-crawler"
     allowed_domains = ["www.lcbo.com",]
     start_urls = ["http://www.lcbo.com/",]
