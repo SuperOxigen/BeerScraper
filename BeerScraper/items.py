@@ -13,4 +13,7 @@ class BeerScraperItem(scrapy.Item):
     product_type = scrapy.Field()
     pass
 
-
+class lcboItem(scrapy.Item):
+    title = scrapy.Field()
+    link = scrapy.Field()
+    

@@ -42,4 +42,3 @@ class lcboSpider(Spider):
 
 # @volume - needs to get rid of | (soldas, x in # per bought)
 # response.xpath("//span[@class='plp-volume plp-volume-list']/text()").extract()
-
