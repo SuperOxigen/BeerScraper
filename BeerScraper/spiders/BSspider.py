@@ -58,6 +58,7 @@ class LCBOSpider(Spider):
             item = items.LCBOItem()
             item['name'] = titles[0].strip()
             item['price'] = prices[0]
+            item['retailer'] = "LCBO"
             if code_pattern.search(codes[0]):
                 item['prod_code'] = code_pattern.search(codes[0]).groupdict()['code']
             else:
@@ -121,6 +122,7 @@ class SAQCrawler(Spider):
             item = items.SAQItem()
             item['name'] = names[0]
             item['price'] = prices[0]
+            item['retailer'] = "SAQ"
             details[0] = unescape(details[0])
             if detail_pattern.search(details[0]):
                 ddict = detail_pattern.search(details[0]).groupdict()
@@ -134,10 +136,6 @@ class SAQCrawler(Spider):
             return item
         else:
             return None
-
-
-
-
 
 
 

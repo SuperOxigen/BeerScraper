@@ -14,7 +14,7 @@ class LCBOItem(Item):
     prod_code = Field()
     price = Field()
     volume = Field()
-    pass
+    retailer = Field()
 
 class SAQItem(Item):
     name = Field()
@@ -22,3 +22,12 @@ class SAQItem(Item):
     prod_type = Field()
     prod_code = Field()
     volume = Field()
+    retailer = ()
+
+class BeerStoreItem(Item):
+    name = Field()
+    price = Field()
+    prod_type = Field()
+    prod_code = Field()
+    volume = Field()
+    retailer = ()
