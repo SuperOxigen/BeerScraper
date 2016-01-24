@@ -67,4 +67,3 @@ class LCBOSpider(Spider):
         else:
             # print("No good %d %d %d" % (len(titles), len(prices), len(codes)))
             return None
-
