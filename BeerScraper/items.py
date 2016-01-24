@@ -5,15 +5,13 @@
 # See documentation in:
 # http://doc.scrapy.org/en/latest/topics/items.html
 
-import scrapy
+from scrapy import Item, Field
 
 
-class BeerScraperItem(scrapy.Item):
-    product_name = scrapy.Field()
-    product_type = scrapy.Field()
+class BeerScraperItem(Item):
+    name = Field()
+    prod_type = Field()
+    prod_code = Field()
+    price = Field()
+    volume = Field()
     pass
-
-class lcboItem(scrapy.Item):
-    title = scrapy.Field()
-    link = scrapy.Field()
-    
