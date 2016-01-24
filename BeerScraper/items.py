@@ -15,3 +15,7 @@ class BeerScraperItem(Item):
     price = Field()
     volume = Field()
     pass
+
+class TBStoreItem(Item):
+	name = Field()
+	
