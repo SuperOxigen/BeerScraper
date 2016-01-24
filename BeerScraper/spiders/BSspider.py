@@ -112,13 +112,15 @@ class SAQCrawler(Spider):
 
         names = sel.xpath('//p[@class="nom"]/a/text()').extract()
         details = sel.xpath('//p[@class="desc"]').extract()
+        prices = sel.xpath('//td[@class="price"]/a/text()').extract()
 
         detail_pattern = compile(r'\>(?P<type_data>[\S\s]+)\<br\>(?P<volume_raw>[\S\s]+)\<br\>[\S\s]+\D(?P<code>\d+)[\S\s]+\<')
         volume_pattern = compile(r'\D(?P<volume>\d+)\D(?P<units>(?:m[lL])|(?:[lL]))')
 
-        if len(names) == 1 and len(details) == 1:
+        if len(names) == 1 and len(details) == 1 and len(prices) == 1:
             item = items.SAQItem()
             item['name'] = names[0]
+            item['price'] = prices[0]
             details[0] = unescape(details[0])
             if detail_pattern.search(details[0]):
                 ddict = detail_pattern.search(details[0]).groupdict()
