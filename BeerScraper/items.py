@@ -8,7 +8,7 @@
 from scrapy import Item, Field
 
 
-class BeerScraperItem(Item):
+class LCBOItem(Item):
     name = Field()
     prod_type = Field()
     prod_code = Field()

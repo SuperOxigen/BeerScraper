@@ -53,7 +53,7 @@ class LCBOSpider(Spider):
         volume_pattern = compile(r'(?P<volume>\d+)\s(?P<units>(?:m[lL])|(?:[lL]))')
 
         if len(titles) == 1 and len(prices) == 1:
-            item = items.BeerScraperItem()
+            item = items.LCBOItem()
             item['name'] = titles[0].strip()
             item['price'] = prices[0]
             if code_pattern.search(codes[0]):
@@ -61,8 +61,7 @@ class LCBOSpider(Spider):
             else:
                 item['prod_code'] = 'NA'
             if len(volume) == 1 and volume_pattern.search(volume[0]):
-                vdict = volume_pattern.search(volume[0]).groupdict()
-                item['volume'] = "%s %s" % (vdict['volume'], vdict['units'])
+                item['volume'] = volume_pattern.search(volume[0]).groupdict()
             return item
         else:
             # print("No good %d %d %d" % (len(titles), len(prices), len(codes)))
