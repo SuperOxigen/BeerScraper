@@ -15,3 +15,10 @@ class LCBOItem(Item):
     price = Field()
     volume = Field()
     pass
+
+class SAQItem(Item):
+    name = Field()
+    price = Field()
+    prod_type = Field()
+    prod_code = Field()
+    volume = Field()
