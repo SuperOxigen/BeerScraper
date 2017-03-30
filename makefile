@@ -16,7 +16,7 @@ saq:
 		mkdir logs; \
 	fi
 	@rm -f data/saq-data.json;
-	@echo "[`date +%H:%M:%S`] Running LCBO web crawler"
+	@echo "[`date +%H:%M:%S`] Running SAQ web crawler"
 
 	@scrapy crawl saq-crawler -o data/saq-data.json -t json 2> logs/saq-`date +%y%m%d%H%M%S`.log
 	@echo "[`date +%H:%M:%S`] Done"

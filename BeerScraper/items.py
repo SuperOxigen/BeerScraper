@@ -22,7 +22,7 @@ class SAQItem(Item):
     prod_type = Field()
     prod_code = Field()
     volume = Field()
-    retailer = ()
+    retailer = Field()
 
 class BeerStoreItem(Item):
     name = Field()
@@ -30,4 +30,4 @@ class BeerStoreItem(Item):
     prod_type = Field()
     prod_code = Field()
     volume = Field()
-    retailer = ()
+    retailer = Field()

@@ -138,4 +138,13 @@ class SAQCrawler(Spider):
             return None
 
 
+class BeerStoreCrawler(Spider):
+    name = "saq-crawler"
+    allowed_domains = ["www.thebeerstore.ca",]
+    start_urls = ["http://www.thebeerstore.ca/beers",]    
 
+    def parse(self, response):
+        sel = Selector(response)
+
+        catagories = sel.xpath()        
+        pass
